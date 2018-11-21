@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "outDir": "build/dist",
+      "module": "commonjs",
+      "target": "esnext",
+      "lib": ["esnext"],
+      "sourceMap": true,
+      "allowJs": true,
+      "rootDirs": ["src"],
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+    },
+    "exclude": [
+      "node_modules",
+      "build",
+      "coverage"
+    ]
+  }

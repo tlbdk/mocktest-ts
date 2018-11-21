@@ -1,0 +1,53 @@
+{
+  "name": "mocktest-ts",
+  "version": "1.0.0",
+  "description": "Sample code to test different types of mocking",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "ci-jest": "jest --silent --no-color --json 2> /dev/null; res=$?; echo; exit $res",
+    "ci-audit": "npm audit --json",
+    "ci-tslint": "tslint -p tsconfig.json -t json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlbdk/mocktest-ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlbdk/mocktest-ts/issues"
+  },
+  "homepage": "https://github.com/tlbdk/mocktest-ts#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.11.3",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "ts-jest": "^23.10.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.0",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {},
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "/src/.+\\.test\\.(ts|js)$",
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
+  }
+}
