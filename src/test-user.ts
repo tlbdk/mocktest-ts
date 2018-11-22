@@ -11,6 +11,7 @@ const functionRequire = require('./test-function-export')
 // Not able to monkey patch
 const { doStuff } = require('./test-function-export')
 import * as functionImport from './test-function-export'
+import * as functionImport2 from './test-function-export2'
 
 export class TestUser {
   public static importWithClassCall() {
@@ -51,6 +52,10 @@ export class TestUser {
 
   public static starImportWithFunctionCall() {
     return functionImport.doStuff()
+  }
+
+  public static starImportWithFunctionCall2() {
+    return functionImport2.doStuff()
   }
 
   public static importWithFunctionCall() {

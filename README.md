@@ -1,6 +1,81 @@
-# mocktest-ts
+# Module imports and mocking
 
 Sample code to test different types of mocking
+
+## How module import and require work
+
+This is a simplified explanation of how module import and require works:
+
+main.js:
+
+``` javascript
+// const my = require('./my.js')
+let my = myJsModule
+my.test()
+
+// let { test } = require('./my.js')
+let test = myJsModule.test // test function reference is copied
+test()
+
+// import * as my from './my.js'
+let my = Object.assign({}, myJsModule) // test reference is copied to a new object
+my.test()
+
+// import * as my from './my.ts'
+let my = myTsModule
+my.test()
+
+// import * as my from './my.mjs'
+let my = myMjsModule
+my.test()
+
+// import { test } from './my.js'
+let my_1 = myJsModule
+// test()
+my_1.test()
+
+// import { test as test2 } from './my.js'
+let my_1 = myJsModule
+// test2()
+my_1.test()
+```
+
+my.js:
+
+``` javascript
+function test() {
+  return "hello"
+}
+// module.exports = { test }
+myJsModule = { test } // Declare the module as a global
+```
+
+my.ts:
+
+``` javascript
+// export function test() {
+//  return "hello"
+// }
+function test() {
+  return "hello"
+}
+// module.exports = { test }
+myTsModule = { test }
+```
+
+my.mjs:
+
+``` javascript
+// export function test() {
+//  return "hello"
+// }
+function test() {
+  return "hello"
+}
+myMjsModule = { test }
+```
+
+## VSCode
 
 launch.json:
 
